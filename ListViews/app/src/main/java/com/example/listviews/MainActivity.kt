@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val listview: ListView = findViewById(R.id.lst)
         val button: Button = findViewById(R.id.btn)
         val editText: EditText = findViewById(R.id.edtxt)
+        val button2 : Button = findViewById(R.id.btn2)
 
         //Changing the List to mutable List
         val listOfNames = mutableListOf<String>("A", "B", "C", "D", "E")
@@ -44,6 +45,16 @@ class MainActivity : AppCompatActivity() {
             //Telling the Names Adapter that Dataset has been Changed
             Namesadapter.notifyDataSetChanged()
         }
+
+        button2.setOnClickListener {
+            val nameRem = editText.text.toString()
+            listOfNames.remove(nameRem)
+            Namesadapter.notifyDataSetChanged()
+            Toast.makeText(this@MainActivity, "Remove clicked", Toast.LENGTH_SHORT).show()
+
+
+        }
+
         listview.setOnItemClickListener(object : OnItemClickListener {
             override fun onItemClick(
                 parent: AdapterView<*>?,
@@ -53,6 +64,8 @@ class MainActivity : AppCompatActivity() {
             ) {
                 val nameclicked = listOfNames[position]
                 Toast.makeText(this@MainActivity, nameclicked, Toast.LENGTH_SHORT).show()
+
+
             }
 
 
