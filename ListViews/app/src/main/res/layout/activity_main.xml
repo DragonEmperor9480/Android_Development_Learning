@@ -7,11 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/edtxt"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="Enter Name"
+        android:layout_marginTop="20dp"
+        />
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edtxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Add Name"
+        android:layout_marginTop="15dp"/>
+
 <ListView
     android:id="@+id/lst"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_constraintTop_toBottomOf="parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/btn"
+    android:layout_marginTop="150dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
