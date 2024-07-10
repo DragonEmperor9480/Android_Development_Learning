@@ -1,6 +1,7 @@
 package com.example.fragments
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,8 +17,15 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fcv, FirstFragment())
-            .commit()
+
+        val btn : Button = findViewById(R.id.btn)
+
+        btn.setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fcv, FirstFragment())
+                .commit()
+
+        }
+
     }
 }
